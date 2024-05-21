@@ -1,5 +1,5 @@
 #include <iostream>
-#define max_size_array = 8
+#define max_size_array 8
 using namespace std;
 
 int stack[max_size_array];
@@ -56,6 +56,7 @@ int push(int data)
     {
         top = top + 1;
         stack[top] = data;
+        cout<<"Element pushed: "<<data<<endl;
     }
     else
     {
@@ -68,14 +69,29 @@ int main()
     push(7);
     push(12);
     push(3);
-
-    cout << "Element at the top of stack: " << peek() << endl;
-    cout << "Element: \n";
-
-    while (!isempty())
+    push(9);
+    push(5);
+    push(1);
+    push(8);
+    push(2);
+    push(4);
+    push(6);
+    cout << "Element at top of the stack: " << peek() << endl;
+    if (top == -1)
     {
-        int data = pop();
-        cout << data << endl;
-        cout << "Address: " << &stack[top] << endl;
+        cout << "Empty\n";
     }
+    else
+    {
+        cout << "Stack: ";
+        for (int i = 0; i <= top; i++)
+        {
+            cout << stack[i] << " ";
+        }
+    }
+    pop();
+    pop();
+    pop();
+    pop();
+    pop();
 }

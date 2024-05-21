@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cctype>
 #define size 6
 using namespace std;
 
